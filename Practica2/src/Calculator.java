@@ -8,17 +8,18 @@ public class Calculator {
 
         int operando1 = 0, operando2 = 0, result = 0;
         
-        if (args[0].matches("^\\d+$")){
+        try {
             operando1 = Integer.parseInt(args[0]);
-        }
-        else{
+        } catch (MatchException e){
             System.out.println("Error: " + args[0]);
             System.exit(1);
         }
-        if (args[0].matches("^\\d+$")) {
+        try {
             operando2 = Integer.parseInt(args[2]);
+        } catch (MatchException e) {
+            System.out.println("Error: " + args[2]);
+            System.exit(1);
         }
-        else
 
         switch (args[1].charAt(0)) {
             case '+': result = operando1 + operando2;
